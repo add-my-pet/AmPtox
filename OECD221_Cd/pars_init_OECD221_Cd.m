@@ -1,4 +1,6 @@
 function [par, metaPar, txtPar] = pars_init_OECD221_Cd(metaData)
+%metaData is not used, however it must remain for compatibility with the
+%AmP estimation procedure 
 
 metaPar.model = 'nat'; 
 
