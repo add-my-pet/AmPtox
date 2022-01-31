@@ -13,6 +13,7 @@ metaData.DEBpars = 'KooyGerg2019';
 
 %% set data
 
+% below you have an example of bi-variate data, see http://www.debtheory.org/wiki/index.php?title=Bi-variate_data
 % time - conc - cum # of offspring per female
 t = (1:21)'; % d, exposure time
 c = [0.0  0.2  0.4  0.8  1.0  2.0]'; % mug/l, concentration of cadmium 
@@ -40,6 +41,8 @@ N = [ 0.000   0.000   0.000   0.000   0.000   0.000 % cumulative offspring per f
 data.tN = [t, N]; % compose data set
 units.tN = {'d', '#'}; label.tN = {'exposure time', 'cum number of offspring'};  
 treat.tN = {1, c}; units.treat.tN = 'mug/l'; label.treat.tN = 'conc. of Cd';
+% notice the first element of treat.tN is 1 - you have three choices 0, 1
+% or 2, each will result in a different way the data is plotted.
 temp.tN = 20; units.temp.tN = 'C'; label.temp.tN = 'temperature';
 bibkey.tN = {'KooyBeda1996b','KooyBeda1996'};
 comment.tN = 'Hazard effects of Cd on Daphnia magna reproduction';
