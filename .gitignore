@@ -1,8 +1,7 @@
 *.asv
 *.DS_store
-*.mat
 *.PNG
-*.png 
 *.mat
 *.png
 *.html
+!docs/
