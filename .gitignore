@@ -4,4 +4,4 @@
 *.mat
 *.png
 *.html
-!docs/
+!docs
