@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>AmPtox</TITLE>
+  <link rel="stylesheet" type="text/css" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/style.css"></link> 
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/dropdown.js"></script>
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/w3data.js"></script>
+</HEAD>
+<BODY>
+
+  <div w3-include-html="wallpaper_AmPtox.html"></div>
+  <div w3-include-html="toolbar_app.html"></div>
+  <script>w3IncludeHTML();</script>
+
+  <div id = "main">
+    <div id = "main-wrapper">    
+      <div id="contentFull">
+        <h2><font color="red">This page is under development</font></h2>
+        <h1 id = "ecoToxTop">
+          Ecotoxicity
+          <a href="https://youtu.be/_ln8znxa4Oc"  target="_blank"><img src="../img/YouTube.png"  height = "50px" align="right" title="11:59"></a>
+        </h1>
+				
+	The motivation to develop DEB theory in 1979 originated from the (societal) need to quantify effects of chemicals on individuals 
+	  and to work out the implications of such effects for populations and ecosystems.
+        Since (energy) allocation rules determine whether or not effects on growth and reproduction depend on food availability, 
+	  there was a need to study these allocation rules in more detail.
+	It is part of the many complexities that are involved in translating results of bioassays under standardized laboratory conditions
+	  to expected effects under field conditions.
+        Differences in <b>exposure</b> are another source of complexities in this context, involving environmental chemistry 
+	  (ligand, pH, water hardness, soil chemistry), (bio)transformation and transport.
+	Spatial (point or diffuse) and temporal scales (continuous or event) of emissions and ecosystem conditions 
+	  ("virgin" or already disturbed, affecting re-inoculation potential from unaffected surrounding areas)
+	  further contribute to the complexity of this extrapolation step.
+        Effect-studies of chemicals presently delineate <b>toxicokinetic</b> aspects, 
+	  i.e. the link between external and internal concentrations of chemicals, and <b>toxicodynamic</b> aspects, 
+	  i.e. the link between internal concentrations and effects on individuals.
+				
+	<h3>Toxicodynamics</h3>
+				
+	DEB theory captures effects of chemicals on energetics via changes in parameter values, linked to internal concentrations.
+	All DEB parameters are potentially affected.
+	The hazard rate, also called instantaneous death rate, classifies as state (i.e. a function of other states and parameters) 
+	  that is a target for aging and starvation, for instance. 
+	  <b>Lethal effects</b> are captured via effects on the hazard rate; other effects are called <b>sublethal effects</b>.
+        DEB parameters have been chosen such that each of them relates to a single metabolic flux, one parameter per flux, 
+	  exposing the potential handles for chemicals to modify individual performance
+        Three concentration ranges are delineated for each parameter: "too little", "enough" and "too much".
+	Within the "enough"-range for a particular parameter, the parameter does not depend on the concentration.
+	The boundaries of this parameter-specific range are called the (lower and upper) internal <b>no-effect concentrations</b>.
+        Changes in parameter values are proportional to the difference between the internal concentration and the (relevant) 
+	  no-effect concentration for small changes in parameter values, on the basis of Taylor's approximation.
+	Small changes in parameter values can, however, result in large changes in measured quantities (i.e. growth or reproduction),
+	  which are called <b>endpoints</b>.
+	Effects on several endpoints might be due to a change in single parameter.
+	<b>Toxicants</b> are chemicals for which the "too little"-range is zero, i.e. the lower no-effect concentration is zero;
+	  the upper no-effect concentration then becomes THE no-effect concentration for that parameter.
+	For some compounds, such as most mutagenic compounds, even the no-effect concentration is zero and all internal molecules have effects.
+	For increasing internal concentrations of toxicants, first one, then more and more parameters become affected.
+	If the concentration range for which a single parameter is affected, is rather large, this parameter represents the effective
+	<b>mode of action</b> of the toxicant (in low concentrations).
+	Effects on a single parameter can translate into effects on multiple endpoints.
+	Toxicants with a similar biochemical mode of action, can have different effective modes of action and <i>vice versa</i>.
+				
+	<p>
+	Cases where just a single toxicant is involved are rare, due to chemical and metabolic transformation, e.g. ionization.
+        Lipophilic compounds are frequently transformed to more hydrophilic (and more toxic) ones, enhancing elimination.
+	Toxicity studies are typically motivated by potential pollution or exposure scenarios, which usually involve mixtures directly.
+	Theory has been developed for how mixtures of chemical compounds affect parameters.
+	DEB theory also has modules for the growth of tumors in relation to the state of the individual, including the nutritional condition.
+				
+	<h3>Toxicokinetics</h3>
+				
+	The basic toxicokinetic model is the <b>one-compartment model</b>, where uptake is proportional to the external concentration 
+	  and elimination is proportional to the internal concentration.
+	In a DEB context, these rates are also proportional to surface area, which links them to structural length of individuals; 
+	  small individuals more rapidly equilibrate with the (changing) chemical environment, compared to bigger ones.
+	Dilution by growth is easy to account for in a DEB context; 
+	  even little growth can affect internal concentration-profiles substantially.
+        Although this simple one-compartment model frequently captures the broad picture well, in practice deviations occur, 
+	  for which variants of the basic model have been developed.
+					
+        <p>
+        The most important variants of one-compartment models delineate several uptake and elimination routes.
+	They account for uptake via food (especially for poorly soluble compounds), or directly from the environment 
+	  (respiration, water for aquatic organisms, skin-contact for terrestrial ones), and elimination via feces, respiration, reproduction.
+        Uptake can depend on nutritional condition via re-partitioning of the internal compound between reserve and structure 
+	  (<b>multi-compartment models</b>), which helps to understand that effects of some toxicants only show up during starvation.
+        Elimination is frequently an active metabolic process, involving chemical transformations.
+	DEB theory specifies the network of interlinked metabolic processes, so concerning not only toxicodynamic, 
+          but also toxicokinetics processes.
+				
+        <h2>From AmP entries to ecotoxicity</h2>
+				
+							
+      </div> <!-- end of content -->
+ 
+      <div w3-include-html="../sys/footer_amp.html"></div>
+      <script>w3IncludeHTML();</script>
+    </div> <!-- end of main wrapper -->
+  </div> <!-- end of main -->
+
+</BODY>
+</HTML>
