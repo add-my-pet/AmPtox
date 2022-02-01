@@ -12,4 +12,6 @@ estim_options('results_output', 3);
 %estim_options('method', 'no');
 
 estim_pars; 
-prt_elas
+prt_elas([],1)
+
+prt_report_AmPtox

@@ -2,14 +2,17 @@ function [data, auxData, metaData, txtData, weights] = mydata_OECD221_Cd
 %% set metaData (optional fields)
 
 metaData.author = 'Bas Kooijman';
+metaData.institution = 'VU University Amsterdam';
+metaData.email = 'bas.kooijman@vu.nl';
 metaData.date = [2022 01 28];
 metaData.toxTest = 'OECD211';
 metaData.species = 'Daphnia_magna';
 metaData.casno = '10108-64-2';
 metaData.compound = 'Cadmium chloride';
-metaData.MolWeight = 112.41; % g/mol, of Cd only
+metaData.molWeight = 112.41; % g/mol, of Cd only
 metaData.endpoint = 'embryo hazard';
 metaData.DEBpars = 'KooyGerg2019';
+metaData.DEBmodel = 'std';
 
 %% set data
 
@@ -45,7 +48,7 @@ treat.tN = {1, c}; units.treat.tN = 'mug/l'; label.treat.tN = 'conc. of Cd';
 % or 2, each will result in a different way the data is plotted.
 temp.tN = 20; units.temp.tN = 'C'; label.temp.tN = 'temperature';
 bibkey.tN = {'KooyBeda1996b','KooyBeda1996'};
-comment.tN = 'Hazard effects of Cd on Daphnia magna reproduction';
+title.tN = 'Hazard effects of Cd on Daphnia magna reproduction';
   
 %% set weights for all real data
 weights = setweights(data, []);
@@ -56,12 +59,12 @@ auxData.temp = temp;
 txtData.units = units;
 txtData.label = label;
 txtData.bibkey = bibkey;
-txtData.comment = comment;
+txtData.title = title;
 
 %% Discussion points
 D1 = 'hazard effects on offspring of ectotherm: target is hazard rate';
 D2 = 'The type of length in parameter L0 should correspond with that in parameter v, so structural length';
-D3 = 'Read (compound) DEB parameters from allStat.Daphnia_magna after load allStat';
+D3 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphna_magna'')';
 metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
 
 %% References
@@ -79,7 +82,7 @@ bibkey = 'KooyBeda1996'; type = 'Book'; bib = [ ...
 'author = {Kooijman, S.A.L.M. and Bedaux, J.J.M.}, ' ...
 'year = {1996}, ' ...
 'title  = {The analysis of aquatic toxicity data}, ' ...
-'publisher = {VU University Press}', ...
+'publisher = {VU University Press}, ' ...
 'howpublished = {https://research.vu.nl/en/publications/the-analysis-of-aquatic-toxicity-data}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
@@ -87,13 +90,13 @@ bibkey = 'KooyBeda1996b'; type = 'article'; bib = [ ...
 'author = {Kooijman, S.A.L.M. and Bedaux, J.J.M.}, ' ...
 'year = {1996}, ' ...
 'title  = {Analysis of toxicity tests on \emph{Daphnia} survival and reproduction}, ' ...
-'journal = {Water Res.}', ...
+'journal = {Water Res.}, ' ...
 'volume = {30}, ' ...
 'pages = {1711-1723}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'KooyGerg2019'; type = 'misc'; bib = [ ...
-'author = {Bas Kooijman, Andre Gergs}, ' ...
+'author = {Bas Kooijman and Andre Gergs}, ' ...
 'year = {2019}, ' ...
 'title  = {AmP Daphnia magna, version 2019/03/16}, ' ...
 'howpublished = {https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Daphnia_magna/Daphnia_magna_res.html}'];
