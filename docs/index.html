@@ -8,16 +8,15 @@
 </HEAD>
 <BODY>
 
-  <div w3-include-html="wallpaper_AmPtox.html"></div>
-  <div w3-include-html="toolbar_app.html"></div>
+  <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/wallpaper_AmPtox.html"></div>
+  <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/toolbar_app.html"></div>
   <script>w3IncludeHTML();</script>
 
   <div id = "main">
     <div id = "main-wrapper">    
       <div id="contentFull">
-        <h2><font color="red">This page is under development</font></h2>
-        <h1 id = "ecoToxTop">
-          Ecotoxicity
+        <h1 id = "AmPtoxTop">
+          Ecotoxicity applications with AmP support
           <a href="https://youtu.be/_ln8znxa4Oc"  target="_blank"><img src="../img/YouTube.png"  height = "50px" align="right" title="11:59"></a>
         </h1>
 				
@@ -91,11 +90,26 @@
           but also toxicokinetics processes.
 				
         <h2>From AmP entries to ecotoxicity</h2>
+
+	The AmPtox website has a number of examples of analysis of effects of toxicants on various endpoints.
+	The system is similar to that used for AmP entries, using 4 source-Matlab-files:
+	<ul>
+	  <li><code>mydata_Filenm</code> to specify data and relevant info
+	  <li><code>pars_init_Filenm</code> to specify initial parameter values
+	  <li><code>predict_Filenm</code> to specify prediction for all data sets
+	  <li><code>run_Filenm</code> to set estimation options, run the estimation and report the results
+	</ul>
+	where <code>Filenm<code> is replaced by a code-name for the data-sets, such as the OECD test number, followed by the compound name.
+
+	<p>
+	The DEB parameters for a particular existing entry can be found from running <code>prt_report_my_pet('My_Pet')</code>,
+	where <code>My_Pet</code> is replaced by th name on the entry.
+	This opends an html-gae that also shows the temperature at which the value applies.
 				
 							
       </div> <!-- end of content -->
  
-      <div w3-include-html="../sys/footer_amp.html"></div>
+      <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/footer_amp.html"></div>
       <script>w3IncludeHTML();</script>
     </div> <!-- end of main wrapper -->
   </div> <!-- end of main -->
