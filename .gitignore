@@ -6,3 +6,5 @@
 *.html
 !/docs/*.html
 !/docs/img/*.png
+!/OECD221_Cd/*.html
+!/OECD221_Cd/*.png

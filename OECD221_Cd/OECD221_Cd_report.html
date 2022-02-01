@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>OECD221_Cd</TITLE>
+  <script src="w3data.js"></script>
+  <style>
+    div.prd {
+      width: 50%;
+      float: left;
+    }
+
+    div.par {
+      width: 50%;
+      float: right;
+    }
+
+    p.clear {
+      clear: both;
+    }
+
+  </style>
+</HEAD>
+
+<BODY>
+
+  <div class="prd">
+  <h1>OECD221_Cd</h1>
+    <b>author: </b>Bas Kooijman<br>
+    <b>institution: </b>VU University Amsterdam<br>
+    <b>email: </b>bas.kooijman@vu.nl<br>
+    <b>date: </b>2022     1    28<br>
+    <b>toxTest: </b>OECD211<br>
+    <b>species: </b>Daphnia_magna<br>
+    <b>casno: </b>10108-64-2<br>
+    <b>compound: </b>Cadmium chloride<br>
+    <b>molWeight: </b>112.41<br>
+    <b>endpoint: </b>embryo hazard<br>
+    <b>DEBpars: </b>KooyGerg2019<br>
+    <b>DEBmodel: </b>std<br>
+  </div>
+
+  <div class="par">
+    <h3>
+      <a href="OECD221_Cd_res.html">go to results</a>
+      <a href="OECD221_Cd_elas.html">, elasticities</a>
+    </h3>
+    <img src=results_OECD221_Cd_01.png width="500px">
+  </div>
+
+  <p class="clear"></p>
+
+  <div w3-include-html="OECD221_Cd_res.html"></div>
+  <script>w3IncludeHTML();</script>
+
+  <p class="clear"></p>
+
+  <div w3-include-html="OECD221_Cd_elas.html"></div>
+  <script>w3IncludeHTML();</script>
+
+  <p class="clear"></p>
+
+  <H3 style="clear:both" class="pet">Discussion</H3>
+  <ul> 
+    <li>
+      hazard effects on offspring of ectotherm: target is hazard rate
+    </li>
+    <li>
+      The type of length in parameter L0 should correspond with that in parameter v, so structural length
+    </li>
+    <li>
+      Read (compound) DEB parameters from prt_report_my_pet('Daphna_magna')
+    </li>
+  </ul>
+
+  <H3 style="clear:both" class="pet"><a class="link" href = "OECD221_Cd_bib.bib" target = "_blank">Bibliography</a></H3>
+  <div w3-include-html="OECD221_Cd_bib.html"></div>
+  <script>w3IncludeHTML();</script>
+
+  <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/footer_amp.html"></div>
+  <script>w3IncludeHTML();</script>
+
+</BODY>
+</HTML>
