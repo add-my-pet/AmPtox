@@ -45,7 +45,7 @@ treat.tN = {1, c}; units.treat.tN = 'mug/l'; label.treat.tN = 'conc. of Cd';
 % or 2, each will result in a different way the data is plotted.
 temp.tN = 20; units.temp.tN = 'C'; label.temp.tN = 'temperature';
 bibkey.tN = {'KooyBeda1996b','KooyBeda1996'};
-comment.tN = 'Hazard effects of Cd on Daphnia magna reproduction';
+title.tN = 'Hazard effects of Cd on Daphnia magna reproduction';
   
 %% set weights for all real data
 weights = setweights(data, []);
@@ -56,12 +56,12 @@ auxData.temp = temp;
 txtData.units = units;
 txtData.label = label;
 txtData.bibkey = bibkey;
-txtData.comment = comment;
+txtData.title = title;
 
 %% Discussion points
 D1 = 'hazard effects on offspring of ectotherm: target is hazard rate';
 D2 = 'The type of length in parameter L0 should correspond with that in parameter v, so structural length';
-D3 = 'Read (compound) DEB parameters from allStat.Daphnia_magna after load allStat';
+D3 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphna_magna'')';
 metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
 
 %% References
