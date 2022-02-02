@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<HTML>
-<HEAD>
-  <TITLE>OECD221_Cd</TITLE>
-  <script src="w3data.js"></script>
+<html>
+<head>
+  <title>OECD221_Cd</title>
+
   <style>
-    div.prd {
-      width: 50%;
+    div.left {
+      width: 35%;
       float: left;
     }
 
-    div.par {
+    div.middle {
+      width: 15%;
+      float: left;
+      padding-top: 60px;
+    }
+
+    div.right {
       width: 50%;
       float: right;
     }
@@ -19,11 +25,11 @@
     }
 
   </style>
-</HEAD>
+</head>
 
-<BODY>
+<body>
 
-  <div class="prd">
+  <div class="left">
   <h1>OECD221_Cd</h1>
     <b>author: </b>Bas Kooijman<br>
     <b>institution: </b>VU University Amsterdam<br>
@@ -39,23 +45,17 @@
     <b>DEBmodel: </b>std<br>
   </div>
 
-  <div class="par">
-    <h3>
-      <a href="OECD221_Cd_res.html">go to results</a>
-      <a href="OECD221_Cd_elas.html">, elasticities</a>
-    </h3>
-    <img src=results_OECD221_Cd_01.png width="500px">
+  <div class="middle">
+    <h3><a href="OECD221_Cd_res.html">results</a></h3>
+
+    <h3><a href="OECD221_Cd_elas.html">elasticities</a></h3>
+
+    <h3><a href="OECD221_Cd_bib.html">bibliography</a></h3>
   </div>
 
-  <p class="clear"></p>
-
-  <div w3-include-html="OECD221_Cd_res.html"></div>
-  <script>w3IncludeHTML();</script>
-
-  <p class="clear"></p>
-
-  <div w3-include-html="OECD221_Cd_elas.html"></div>
-  <script>w3IncludeHTML();</script>
+  <div class="right">
+    <img src=results_OECD221_Cd_01.png width="500px">
+  </div>
 
   <p class="clear"></p>
 
@@ -72,12 +72,5 @@
     </li>
   </ul>
 
-  <H3 style="clear:both" class="pet"><a class="link" href = "OECD221_Cd_bib.bib" target = "_blank">Bibliography</a></H3>
-  <div w3-include-html="OECD221_Cd_bib.html"></div>
-  <script>w3IncludeHTML();</script>
-
-  <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/footer_amp.html"></div>
-  <script>w3IncludeHTML();</script>
-
-</BODY>
-</HTML>
+</body>
+</html>
