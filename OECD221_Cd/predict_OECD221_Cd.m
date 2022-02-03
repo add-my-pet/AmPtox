@@ -29,8 +29,22 @@ function [prdData, info] = predict_OECD221_Cd(par, data, auxData)
   [t, X] = ode23(@dharep, [0;tN(:,1)], X0, [], C, nc, c0, cA, ke, kap, kap_R, g, k_J, k_M, v, U_Hp, U_0, f); % integrate changes in state
   X(1,:) = []; EN = X(:, 1:nc); % remove first line, select offspring only
   
+  C = treat.tNN{2}(:); nc = length(C);
+  
+  % initialize state vector; catenate to avoid loops
+  X0 = [zeros(nc,1);     % N: cumulative number of offspring (#)
+        H0 * ones(nc,1); % H: scaled maturity H = M_H/ {J_EAm} (d.cm^2)
+        L0 * ones(nc,1); % L: body length (cm)
+        U0 * ones(nc,1); % U: scaled reserve U = M_E/ {J_EAm} (d.cm^2)
+        zeros(nc,1)];    % c: scaled internal concentration (mug/l)
+
+  % get trajectories
+  [t, X] = ode23(@dharep, [0;tN(:,1)], X0, [], C, nc, c0, cA, ke, kap, kap_R, g, k_J, k_M, v, U_Hp, U_0, f); % integrate changes in state
+  X(1,:) = []; ENN = X(:, 1:nc); % remove first line, select offspring only
+
   % pack to output
   prdData.tN = EN;
+  prdData.tNN = ENN;
   
 end
 

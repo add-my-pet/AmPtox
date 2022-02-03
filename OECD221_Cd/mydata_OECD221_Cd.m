@@ -43,13 +43,22 @@ N = [ 0.000   0.000   0.000   0.000   0.000   0.000 % cumulative offspring per f
      98.700  76.200  53.000  21.700  11.300   5.244];
 data.tN = [t, N]; % compose data set
 units.tN = {'d', '#'}; label.tN = {'exposure time', 'cum number of offspring'};  
-treat.tN = {1, c}; units.treat.tN = 'mug/l'; label.treat.tN = 'conc. of Cd';
+treat.tN = {0, c}; units.treat.tN = 'mug/l'; label.treat.tN = 'conc. of Cd';
 % notice the first element of treat.tN is 1 - you have three choices 0, 1
 % or 2, each will result in a different way the data is plotted.
 temp.tN = 20; units.temp.tN = 'C'; label.temp.tN = 'temperature';
 bibkey.tN = {'KooyBeda1996b','KooyBeda1996'};
 title.tN = 'Hazard effects of Cd on Daphnia magna reproduction';
-  
+ 
+% the same again to illustrate a different way of presenting the results 
+data.tNN = data.tN; label.tNN = label.tN; 
+units.treat.tNN = units.treat.tN; label.treat.tNN = label.treat.tN;
+units.tNN = units.tN;
+treat.tNN = treat.tN; treat.tNN{1} = 1;
+temp.tNN = 20; units.temp.tNN = 'C'; label.temp.tNN = 'temperature';
+title.tNN = title.tN;
+bibkey.tNN = bibkey.tN;
+
 %% set weights for all real data
 weights = setweights(data, []);
 
