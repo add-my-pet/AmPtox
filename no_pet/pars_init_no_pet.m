@@ -1,9 +1,7 @@
-function [par, metaPar, txtPar] = pars_init_no_pet(metaData)
-% metaData is not used in this function, but remains for compatibility
-% reasons 
-
+function [par, metaPar, txtPar] = pars_init_no_pet(~)
+% input is not used in this function, but remains for compatibility reasons 
+ 
 metaPar.model = 'nat'; 
-
 
 %% parameters 
 par.a = 3.0757;       free.a     = 1;   units.a = '-';            label.a = 'intercept'; 

@@ -62,10 +62,9 @@ txtData.bibkey = bibkey;
 txtData.title = title;
 
 %% Discussion points
-D1 = 'hazard effects on offspring of ectotherm: target is hazard rate';
-D2 = 'The type of length in parameter L0 should correspond with that in parameter v, so structural length';
-D3 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphna_magna'')';
-metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
+D1 = 'The type of length in parameter L0 should correspond with that in parameter v, so structural length';
+D2 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphna_magna'')';
+metaData.discussion = struct('D1',D1, 'D2',D2);
 
 %% References
 bibkey = 'OECD221'; type = 'techreport'; bib = [ ...
