@@ -4,10 +4,12 @@
 *.mat
 *.png
 *.html
+*.bib
 !/docs/*.html
 !/docs/img/*.png
 !/OECD221_Cd/*.html
 !/OECD221_Cd/*.png
+!/OECD221_Cd/*.bib
 
 # OS generated files #
 ######################
