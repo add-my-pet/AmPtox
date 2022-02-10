@@ -3,7 +3,7 @@ function [prdData, info] = predict_OECD221_Cd(par, data, auxData)
   % unpack par, data, auxData
   vars_pull(par); vars_pull(data); vars_pull(auxData);  
   
-  if c0 < 0 || cA < 0 || ke < 0
+  if c_0 < 0 || c_T < 0 || k_e < 0
     prdData = []; info = 0; return
   else
     info = 1; % we use the default, filter = 1, to allow user-defined filters
@@ -26,7 +26,7 @@ function [prdData, info] = predict_OECD221_Cd(par, data, auxData)
   U_0 = initial_scaled_reserve(1,par_U0); % d.cm^2
 
   % get trajectories
-  [t, X] = ode23(@dharep, [0;tN(:,1)], X0, [], C, nc, c0, cA, ke, kap, kap_R, g, k_J, k_M, v, U_Hp, U_0, f); % integrate changes in state
+  [t, X] = ode23(@dharep, [0;tN(:,1)], X0, [], C, nc, c_0, c_T, k_e, kap, kap_R, g, k_J, k_M, v, U_Hp, U_0, f); % integrate changes in state
   X(1,:) = []; EN = X(:, 1:nc); % remove first line, select offspring only
   
   C = treat.tNN{2}(:); nc = length(C);
@@ -39,7 +39,7 @@ function [prdData, info] = predict_OECD221_Cd(par, data, auxData)
         zeros(nc,1)];    % c: scaled internal concentration (mug/l)
 
   % get trajectories
-  [t, X] = ode23(@dharep, [0;tN(:,1)], X0, [], C, nc, c0, cA, ke, kap, kap_R, g, k_J, k_M, v, U_Hp, U_0, f); % integrate changes in state
+  [t, X] = ode23(@dharep, [0;tN(:,1)], X0, [], C, nc, c_0, c_T, k_e, kap, kap_R, g, k_J, k_M, v, U_Hp, U_0, f); % integrate changes in state
   X(1,:) = []; ENN = X(:, 1:nc); % remove first line, select offspring only
 
   % pack to output
@@ -48,7 +48,7 @@ function [prdData, info] = predict_OECD221_Cd(par, data, auxData)
   
 end
 
-function dX = dharep(t, X, C, nc, c0, cA, ke, kap, kapR, g, kJ, kM, v, Hp, U0, f)
+function dX = dharep(t, X, C, nc, c_0, c_T, k_e, kap, kapR, g, kJ, kM, v, Hp, U0, f)
   %  created 2002/01/20 by Bas Kooijman, modified 2007/07/12
   %
   %  routine called by harep
@@ -69,7 +69,7 @@ function dX = dharep(t, X, C, nc, c0, cA, ke, kap, kapR, g, kJ, kM, v, Hp, U0, f
   U = X(3*nc+(1:nc)); % scaled reserve U = M_E/ {J_EAm}
   c = X(4*nc+(1:nc)); % scaled internal concentration
   
-  s = max(0,(c - c0)/ cA);    % -, stress factor
+  s = max(0,(c - c_0)/ c_T);    % -, stress factor
 
   E = U .* v ./ L .^ 3;       % -, scaled reserve density e = m_E/m_Em (dim-less)
   %% again we scale with respect to m_Em = {J_EAm}/ (v [M_V]) of the blanc
@@ -81,7 +81,7 @@ function dX = dharep(t, X, C, nc, c0, cA, ke, kap, kapR, g, kJ, kM, v, Hp, U0, f
   rB = kM * g ./ (3 * (E + g)); % 1/d, von Bert growth rate
   dL = rB .* (E * Lm - L);   % cm/d, change in length
   dU = f * L .^ 2 - SC;      % cm^2/ change in time-surface U = M_E/{J_EAm}
-  dc = (ke * Lm .* (C - c) - 3 * dL .* c) ./ L; % mug/d.l, change in scaled int. conc
+  dc = (k_e * Lm .* (C - c) - 3 * dL .* c) ./ L; % mug/d.l, change in scaled int. conc
 
   R = exp(-s) .* ((1 - kap) * SC - kJ * Hp) * kapR/ U0; % 1/d, reprod rate in #/d
   R = (H > Hp) .* max(0,R); % 1/d, make sure that R is non-negative

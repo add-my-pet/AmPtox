@@ -5,9 +5,9 @@ metaPar.model = 'nat';
 
 %% parameters 
 % stress
-par.c0 = 0.00049955; free.c0 = 1; units.c0 = 'mM'; label.c0 = ' No-Effect-Concentration (external, may be zero)';
-par.cA = 0.0053618; free.cA = 1; units.cA = 'mM'; label.cA = 'tolerance concentration';
-par.ke = 0.0010741; free.ke = 1; units.ke = '1/d'; label.ke = 'elimination rate at L = L_m';
+par.c_0 = 0.00049955; free.c_0 = 1; units.c_0 = 'mug'; label.c_0 = ' No-Effect-Concentration (external, may be zero)';
+par.c_T = 0.0053618; free.c_T = 1; units.c_T = 'mug'; label.c_T = 'tolerance concentration';
+par.k_e = 0.0010741; free.k_e = 1; units.k_e = '1/d'; label.k_e = 'elimination rate at L = L_m';
 % DEB
 par.kap = 0.58; free.kap = 0; units.kap =  '-'; label.kap = 'fraction allocated to growth + som maint';
 par.kap_R = 0.95; free.kap_R = 0; units.kap_R = '-'; label.kap_R = 'fraction of reprod flux that is fixed into embryo reserve'; 

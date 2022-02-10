@@ -71,12 +71,12 @@ txtData.bibkey = bibkey;
 txtData.title = title;
 
 %% model
-TK1 = 'The temperature, food density and external concentration are constant';
+TK1 = 'The temperature, food density and external concentration (i.e. in the water) are constant';
 TK2 = 'The uptake rate is proportional to the surface area of the individual and to the external concentration';
 TK3 = 'The elimination rate ke is proportional to the internal concentration';
 TD1 = 'Effects are linked to the internal concentration c, scaled such that it has the dimension of an external concentration';
-TD2 = 'The stress s is absent (s=0) for concentrations less than c0, and for larger concentrations equal to s=(c-c0)/cA';
-TD3 = 'The reproduction rate is multiplied by exp(-s)';
+TD2 = 'The stress s is absent (s=0) for concentrations less than c_0, and for larger concentrations equal to s=(c-c_0)/c_T';
+TD3 = 'The reproduction rate is multiplied by the embryo survival probability exp(-s)';
 metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2, 'TD3',TD3);
 
 %% Discussion points
