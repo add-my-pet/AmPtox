@@ -5,8 +5,8 @@ metaPar.model = 'nat';
 
 %% parameters 
 % stress
-par.c_0 = 0.00049955; free.c_0 = 1; units.c_0 = 'mug'; label.c_0 = ' No-Effect-Concentration (external, may be zero)';
-par.c_T = 0.0053618; free.c_T = 1; units.c_T = 'mug'; label.c_T = 'tolerance concentration';
+par.c_0 = 0.00049955; free.c_0 = 1; units.c_0 = 'mug/l'; label.c_0 = ' No-Effect-Concentration (external, may be zero)';
+par.c_T = 0.0053618; free.c_T = 1; units.c_T = 'mug/l'; label.c_T = 'tolerance concentration';
 par.k_e = 0.0010741; free.k_e = 1; units.k_e = '1/d'; label.k_e = 'elimination rate at L = L_m';
 % DEB
 par.kap = 0.58; free.kap = 0; units.kap =  '-'; label.kap = 'fraction allocated to growth + som maint';

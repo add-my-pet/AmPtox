@@ -48,7 +48,7 @@ treat.tN = {1, c}; units.treat.tN = 'mug/l'; label.treat.tN = 'conc. of Cd';
 % or 2, each will result in a different way the data is plotted.
 temp.tN = 20; units.temp.tN = 'C'; label.temp.tN = 'temperature';
 bibkey.tN = {'KooyBeda1996b','KooyBeda1996'};
-title.tN = 'Hazard effects of Cd on Daphnia magna reproduction';
+title.tN = 'Hazard effects on reproduction';
  
 % the same again to illustrate a different way of presenting the results 
 data.tNN = data.tN; label.tNN = label.tN; 
@@ -61,6 +61,7 @@ bibkey.tNN = bibkey.tN;
 
 %% set weights for all real data
 weights = setweights(data, []);
+weights.tN = 10 * weights.tN;
 
 %% pack auxData and txtData for output
 auxData.treat = treat; % auxData must have at least one field

@@ -1,11 +1,10 @@
 close all; 
 global pets
 
-pets = {'OECD221_Cd'};
+pets = {'OECD203_dieldrin'};
 
 estim_options('default'); 
 estim_options('max_step_number',5e2); 
-estim_options('max_fun_evals',5e3);  
 estim_options('tol_simplex',1e-10);  
 
 estim_options('pars_init_method', 2);
