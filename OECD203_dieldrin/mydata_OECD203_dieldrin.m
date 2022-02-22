@@ -52,9 +52,8 @@ TD2 = 'The hazard rate equals h+b*max(0,c-c_0) for no-effect concenteation c_0, 
 metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2);
 
 %% Discussion points
-D1 = 'The type of length in parameter L0 should correspond with that in parameter v, so structural length';
-D2 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphna_magna'')';
-metaData.discussion = struct('D1',D1, 'D2',D2);
+D1 = 'Growth is neglected, given the short exposure time';
+metaData.discussion = struct('D1',D1);
 
 %% References
 bibkey = 'OECD203'; type = 'techreport'; bib = [ ...
