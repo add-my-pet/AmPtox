@@ -18,10 +18,10 @@ metaData.DEBmodel = 'NA';
 
 t = (0:7)'; % d, exposure times in days
 c = [0 .32 5.6 10 18 32 56 100]'; % mug/l, dieldrin concentrations in sea water
-N = [20*ones(1,8); 20*ones(1,6),19,18; ... % surviving guppies, data from IMW-TNO
+N = [20*ones(1,8)           ; 20*ones(1,6),19,18; ... % surviving guppies, data from IMW-TNO
      20 20 19 19 19 18 18 18; 20 20 17 15 14 12 9 8; ...
-     20 18 15 9 4 4 3 2; 20 18 9 2 1 0 0 0; ...
-     20 17 6 1 0 0 0 0; 20 5, zeros(1,6)]';
+     20 18 15 9 4 4 3 2     ; 20 18 9 2 1 0 0 0; ...
+     20 17 6 1 0 0 0 0      ; 20 5 0 0 0 0 0 0]';
 data.tN = [t, N]; initial = 20; % compose data set
 units.tN = {'d', '#'}; label.tN = {'exposure time', 'surviving individuals'};  
 treat.tN = {1, c}; units.treat.tN = 'mug/l'; label.treat.tN = 'conc. of dieldrin';
