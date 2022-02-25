@@ -14,9 +14,9 @@ par.kap_R = 0.95; free.kap_R = 0; units.kap_R = '-'; label.kap_R = 'fraction of 
 par.g  = 4.94; free.g = 0; units.g = '-'; label.g = 'energy investment ratio';
 par.k_J = 0.002; free.k_J = 0; units.k_J = '1/d'; label.k_J = 'maturity maint rate coeff';
 par.k_M = 0.27; free.k_M = 0; units.k_M = '1/d'; label.k_M = 'somatic maint rate coeff';
-par.v  = 0.1809; free.v = 0; units.v = 'cm/d'; label.v = 'energy conductance';
-par.U_Hb = 0.00017433; free.U_Hb = 0; units.U_Hb = 'd.cm^2'; label.U_Hb = 'scaled maturity at birth';
-par.U_Hp = 0.0034802; free.U_Hp = 0; units.U_Hp = 'd.cm^2'; label.U_Hp = 'scaled maturity at puberty';
+par.v  = 0.1858; free.v = 0; units.v = 'cm/d'; label.v = 'energy conductance';
+par.U_Hb = 0.00017447; free.U_Hb = 0; units.U_Hb = 'd.cm^2'; label.U_Hb = 'scaled maturity at birth';
+par.U_Hp = 0.0034805; free.U_Hp = 0; units.U_Hp = 'd.cm^2'; label.U_Hp = 'scaled maturity at puberty';
 % other
 par.L0 = 0.026; free.L0 = 0; units.L0 = 'cm'; label.L0 = 'initial structural length';
 par.f = 1; free.f = 0; units.f = '-'; label.f = 'scaled functional response';

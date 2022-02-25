@@ -10,7 +10,8 @@ metaData.species = 'Daphnia_magna';
 metaData.casno = '10108-64-2';
 metaData.compound = 'Cadmium chloride';
 metaData.molWeight = 112.41; % g/mol, of Cd only
-metaData.endpoint = 'embryo hazard';
+metaData.endpoint = 'cum # offspring 21 d';
+metaData.target = 'embryo hazard';
 metaData.DEBpars = 'KooyGerg2019';
 metaData.DEBmodel = 'std';
 
@@ -74,7 +75,7 @@ txtData.title = title;
 %% model
 TK1 = 'The temperature, food density and external concentration (i.e. in the water) are constant';
 TK2 = 'The uptake rate is proportional to the surface area of the individual and to the external concentration';
-TK3 = 'The elimination rate ke is proportional to the internal concentration';
+TK3 = 'The elimination rate k_e is proportional to the internal concentration';
 TD1 = 'Effects are linked to the internal concentration c, scaled such that it has the dimension of an external concentration';
 TD2 = 'The stress s is absent (s=0) for concentrations less than c_0, and for larger concentrations equal to s=(c-c_0)/c_T';
 TD3 = 'The reproduction rate is multiplied by the embryo survival probability exp(-s)';
@@ -82,7 +83,7 @@ metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2, '
 
 %% Discussion points
 D1 = 'The type of length in parameter L0 should correspond with that in parameter v, so structural length';
-D2 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphna_magna'')';
+D2 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphnia_magna'')';
 metaData.discussion = struct('D1',D1, 'D2',D2);
 
 %% References
