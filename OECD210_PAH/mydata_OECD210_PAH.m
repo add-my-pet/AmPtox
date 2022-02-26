@@ -1,10 +1,10 @@
-function [data, auxData, metaData, txtData, weights] = mydata_OECD2010_PAH
+function [data, auxData, metaData, txtData, weights] = mydata_OECD210_PAH
 %% set metaData (optional fields)
 
 metaData.author = 'Bas Kooijman';
 metaData.institution = 'VU University Amsterdam';
 metaData.email = 'bas.kooijman@vu.nl';
-metaData.date = [2022 02 25];
+metaData.date = [2022 02 26];
 metaData.toxTest = 'OECD210';
 metaData.species = 'Danio_rerio';
 metaData.casno = '-';

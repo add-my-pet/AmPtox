@@ -49,20 +49,7 @@ function [prdData, info] = predict_OECD221_Cd(par, data, auxData)
 end
 
 function dX = dharep(t, X, C, nc, c_0, c_T, k_e, kap, kapR, g, kJ, kM, v, Hp, U0, f)
-  %  created 2002/01/20 by Bas Kooijman, modified 2007/07/12
-  %
-  %  routine called by harep
-  %  hazard effects on offspring of ectotherm: target is hazard rate
-  %
-  %% Input
-  %  t: exposure time (not used)
-  %  X: (5 * nc,1) vector with state variables (see below)
-  %
-  %% Output
-  %  dX: derivatives of state variables
-
-
-  %% unpack state vector
+  % unpack state vector
   N = X(1:nc);        % cumulative number of offspring (not used)
   H = X(nc+(1:nc));   % scaled maturity H = M_H/ {J_EAm}
   L = X(2*nc+(1:nc)); % structural length
@@ -72,7 +59,7 @@ function dX = dharep(t, X, C, nc, c_0, c_T, k_e, kap, kapR, g, kJ, kM, v, Hp, U0
   s = max(0,(c - c_0)/ c_T);    % -, stress factor
 
   E = U .* v ./ L .^ 3;       % -, scaled reserve density e = m_E/m_Em (dim-less)
-  %% again we scale with respect to m_Em = {J_EAm}/ (v [M_V]) of the blanc
+  % again we scale with respect to m_Em = {J_EAm}/ (v [M_V]) of the blanc
 
   Lm = v/ (kM * g);           % cm, maximum length
   eg = E .* g ./ (E + g);     % -, in DEB notation: e g/ (e + g)
