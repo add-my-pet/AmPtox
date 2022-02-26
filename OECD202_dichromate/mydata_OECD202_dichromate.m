@@ -62,7 +62,7 @@ metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2, '
 %% Discussion points
 D1 = 'The type of length in parameter L_0 should correspond with that in parameter L_m, so structural length';
 D2 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphnia_magna'')';
-D3 = 'This analysis is discussed in KooyBeda1996b KooyBeda1996';
+D3 = 'This analysis is discussed in KooyBeda1996b and KooyBeda1996';
 metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
 
 %% References
