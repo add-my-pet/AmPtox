@@ -21,7 +21,7 @@ metaData.DEBmodel = 'abj';
 c = [0     0     5.6  10    18    32    56   100]'; % percentage of PAH mixture
 L = [1.408 1.412 1.392 1.391 1.332 1.285 1.074 0.958]'; % cm, total length at 37 d
 data.cL = [c, L]; % compose data set
-units.cL = {'%', 'cm'}; label.cL = {'PAH mix', 'total length'};  
+units.cL = {'%', 'cm'}; label.cL = {'PAH mix', 'total length at 37 d'};  
 temp.cL = 25; units.temp.cL = 'C'; label.temp.cL = 'temperature';
 time.cL = 37; units.time.cL = 'd'; label.time.cL = 'exposure time';
 bibkey.cL = {'HoofHenz1993'};
@@ -51,7 +51,8 @@ metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2, '
 D1 = 'The type of length in parameter L_0 should correspond with that in parameter v, so structural length';
 D2 = 'Read (compound) DEB parameters from prt_report_my_pet(''Danio_rerio''), but shape coefficient del_M from results_Danio_rerio.mat in structure par';
 D3 = 'This analysis is discussed in KooyBeda1996, KooyBeda1996a';
-metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
+D4 = 'The parameter values apply at the temperature of the test';
+metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3, 'D4',D4);
 
 %% References
 bibkey = 'OECD210'; type = 'techreport'; bib = [ ...

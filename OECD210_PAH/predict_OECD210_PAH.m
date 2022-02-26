@@ -9,19 +9,21 @@ function [prdData, info] = predict_OECD210_PAH(par, data, auxData)
     info = 1; % we use the default, filter = 1, to allow user-defined filters
   end
     
+  TC = tempcorr(C2K(temp.cL), C2K(20), T_A); % -, temperature correction factor (used for v)
+  
   nc = size(cL,1); % number of concentrations
-  pars_tj = [g k 0 v_Hb v_Hj v_Hp];  
-  [t_j, t_p, t_b, l_j, l_p, l_b, l_i, rho_j, rho_B] = get_tj(pars_tj, f);
+  pars_tj = [g k 0 v_Hb v_Hj v_Hp]; % compose parameter vector
+  [~, ~, ~, l_j, ~, l_b, l_i] = get_tj(pars_tj, f);
   L_i = L_m * l_i; % cm, ultimate structural length
   s_M = l_j/ l_b; % -, acceleration factor
   
   % initialize state vector; catenate to avoid loops
   X_0 = [Lw_0 * del_M * ones(nc,1); %  L: cm, initial structural length, 
-         f * ones(nc,1); %  -, scaled reserve density
-         zeros(nc,1)]; %  c: percent, scaled internal concentration
+         f * ones(nc,1); %  e: -, scaled reserve density
+         zeros(nc,1)]; % c: percent, scaled internal concentration
   
-  [~, LUc] = ode23(@dLec, [0; time.cL], X_0, [], cL(:,1), nc, c_0, c_T, k_e, g, L_i, s_M*v, f); % integrate changes in state
-  prdData.cL = LUc(end,1:nc)'/ del_M; % cm, head+body length
+  [~, LUc] = ode23(@dLec, [0; time.cL], X_0, [], cL(:,1), nc, c_0, c_T, k_e, g, L_i, TC*s_M*v, f); % integrate changes in state
+  prdData.cL = LUc(end,1:nc)'/ del_M; % cm, total length
 end
 
 function dX = dLec(~, X, C, nc, c_0, c_T, k_e, g, L_i, v, f)
