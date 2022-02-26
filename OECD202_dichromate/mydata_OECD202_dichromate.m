@@ -35,7 +35,7 @@ units.tN = {'d', '#'}; label.tN = {'exposure time', 'survivors'};
 treat.tN = {2, c}; units.treat.tN = 'mg/l'; label.treat.tN = 'dichromate conc.';
 temp.tN = 20; units.temp.tN = 'C'; label.temp.tN = 'temperature';
 initial.tN = 50; units.initial.tN = '#'; label.initial.tN = 'initial # of individuals';
-bibkey.tN = {'KooyBeda1996b','KooyBeda1996'};
+bibkey.tN = 'Adem1993';
 title.tN = 'Effects on hazard rate';
  
 %% set weights for all real data
@@ -62,7 +62,8 @@ metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2, '
 %% Discussion points
 D1 = 'The type of length in parameter L_0 should correspond with that in parameter L_m, so structural length';
 D2 = 'Read (compound) DEB parameters from prt_report_my_pet(''Daphnia_magna'')';
-metaData.discussion = struct('D1',D1, 'D2',D2);
+D3 = 'This analysis is discussed in KooyBeda1996b KooyBeda1996';
+metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
 
 %% References
 bibkey = 'OECD202'; type = 'techreport'; bib = [ ...
@@ -96,4 +97,10 @@ bibkey = 'KooyGerg2019'; type = 'misc'; bib = [ ...
 'year = {2019}, ' ...
 'title  = {AmP Daphnia magna, version 2019/03/16}, ' ...
 'howpublished = {\url{https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Daphnia_magna/Daphnia_magna_res.html}}'];
+metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
+%
+bibkey = 'Adem1993'; type = 'misc'; bib = [ ...
+'author = {Thea Adema}, ' ...
+'year = {1993}, ' ...
+'note  = {Data kindly provided by Thea Adema, IMW-TNO laboratories, Delft, NL}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
