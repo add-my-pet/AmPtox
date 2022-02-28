@@ -10,7 +10,7 @@ metaData.species = 'Lumbricus rubellus';
 metaData.casno = '7447-39-4';
 metaData.compound = 'Copper chloride';
 metaData.molWeight = 127.09; % g/mol, of Cu only
-metaData.endpoint = 'cum # offspring 21 d';
+metaData.endpoint = 'body weight';
 metaData.target = 'spec assimilation';
 metaData.DEBpars = 'Kooy2022';
 metaData.DEBmodel = 'std';
@@ -55,7 +55,8 @@ metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2, '
 %% Discussion points
 D1 = 'The analysis is discussed in Kooy2010, Fig 6.10';
 D2 = 'Read (compound) DEB parameters from prt_report_my_pet(''Lumbricus_rubellus'')';
-metaData.discussion = struct('D1',D1, 'D2',D2);
+D3 = 'The contribution of reserve to body weight was estimated to account for the contribution of gut contents to weight';
+metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3);
 
 %% References
 bibkey = 'OECD222'; type = 'techreport'; bib = [ ...

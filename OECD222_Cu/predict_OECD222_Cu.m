@@ -19,10 +19,10 @@ function [prdData, info] = predict_OECD222_Cu(par, data, auxData)
 
   % get trajectories
   [t, X] = ode23(@dLec, [0;tWw(:,1)], X0, [], C, nc, c_0, c_T, k_e, g, L_m, v, f); % integrate changes in state
-  X(1,:) = []; L = X(:, 1:nc); % remove first line, select length only
+  X(1,:) = []; L = X(:, 1:nc); e = X(:,nc+(1:nc)); % remove first line, select length and scaled reserve
   
   % pack to output
-  prdData.tWw = L.^3 * (1+ome); % g, wet weight
+  prdData.tWw = L.^3 .* (1+ e*ome); % g, wet weight
   
 end
 
