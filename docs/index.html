@@ -116,6 +116,7 @@
 	The examples presently include
         <table id="t01">
 	  <tr class="head"><th>example</th> <th>species</th>             <th>end point</th>       <th>target</th></tr>
+	  <tr><td>OECD201_LAS</td>          <td>Isochrysis galbana</td>  <td>optical density</td> <td>hazard rate, cost for structure</td></tr>
 	  <tr><td>OECD202_dichromate</td>   <td>Daphnia magna</td>       <td>survival</td>        <td>hazard rate</td></tr>
 	  <tr><td>OECD203_dieldrin</td>     <td>Poecilia reticulata</td> <td>survival</td>        <td>hazard rate</td></tr>
 	  <tr><td>OECD210_PAH</td>          <td>Danio rerio</td>         <td>body length</td>     <td>spec assimilation</td></tr>
@@ -130,6 +131,8 @@
 	The DEB parameters for a particular existing entry can be found from running <code>prt_report_my_pet('My_Pet')</code>,
 	where <code>My_Pet</code> is replaced by the name of the entry.
 	This opens a searchable html-page that also shows the temperatures at which the values apply and info to convert to other temperatures.
+	The production of the report runs <a href="https://miktex.org/packages/bibtex">BibTex</a> (under Matlab), which can be downloaded freely,
+	to produce an html with references; if not available, the bib-file is shown.
 										
       </div> <!-- end of content -->
  
