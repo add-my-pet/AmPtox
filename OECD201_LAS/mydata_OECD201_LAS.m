@@ -35,7 +35,7 @@ data.tOD = [t, OD]; % compose data set
 units.tOD = {'h', '-'}; label.tOD = {'exposure time', 'optical density'};  
 treat.tOD = {2, c}; units.treat.tOD = 'mg/l'; label.treat.tOD = 'LAS conc.';
 temp.tOD = 20; units.temp.tOD = 'C'; label.temp.tOD = 'temperature';
-initial.tOD = 0.285; units.initial.tOD = '-'; label.initial.tOD = 'initial optical density';
+init.tOD = 0.285; units.init.tOD = '-'; label.init.tOD = 'initial optical density';
 bibkey.tOD = 'Pera2002';
 title.tOD = 'Effects on hazard rate';
  
@@ -45,7 +45,7 @@ weights = setweights(data, []);
 %% pack auxData and txtData for output
 auxData.treat = treat; 
 auxData.temp = temp; 
-auxData.initial = initial; 
+auxData.init = init; 
 txtData.units = units;
 txtData.label = label;
 txtData.bibkey = bibkey;

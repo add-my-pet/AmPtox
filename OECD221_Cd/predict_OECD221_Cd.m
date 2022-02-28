@@ -39,7 +39,7 @@ function [prdData, info] = predict_OECD221_Cd(par, data, auxData)
         zeros(nc,1)];    % c: scaled internal concentration (mug/l)
 
   % get trajectories
-  [t, X] = ode23(@dharep, [0;tN(:,1)], X0, [], C, nc, c_0, c_T, k_e, kap, kap_R, g, k_J, k_M, v, U_Hp, U_0, f); % integrate changes in state
+  [t, X] = ode23(@dharep, [0;tNN(:,1)], X0, [], C, nc, c_0, c_T, k_e, kap, kap_R, g, k_J, k_M, v, U_Hp, U_0, f); % integrate changes in state
   X(1,:) = []; ENN = X(:, 1:nc); % remove first line, select offspring only
 
   % pack to output

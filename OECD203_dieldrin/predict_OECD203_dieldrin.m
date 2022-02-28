@@ -17,4 +17,4 @@ function [prdData, info] = predict_OECD221_Cd(par, data, auxData)
       b*(t1*(max(0,c-c_0)')).*max(0,t*c1 - t1*t_0);
   f = min(1,exp(f)).* (exp(-h*t)*c1);
   
-  prdData.tN = f * initial;
+  prdData.tN = f * init;

@@ -65,7 +65,7 @@ weights = setweights(data, []);
 weights.tN = 10 * weights.tN;
 
 %% pack auxData and txtData for output
-auxData.treat = treat; % auxData must have at least one field
+auxData.treat = treat;
 auxData.temp = temp; 
 txtData.units = units;
 txtData.label = label;

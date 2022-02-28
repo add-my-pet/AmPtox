@@ -1,4 +1,4 @@
-function [data, auxData, metaData, txtData, weights] = mydata_OECD221_Cd
+function [data, auxData, metaData, txtData, weights] = mydata_OECD203_dieldrin
 %% set metaData (optional fields)
 
 metaData.author = 'Bas Kooijman';
@@ -23,7 +23,7 @@ N = [20*ones(1,8)           ; 20*ones(1,6),19,18; ... % surviving guppies, data 
      20 20 19 19 19 18 18 18; 20 20 17 15 14 12 9 8; ...
      20 18 15 9 4 4 3 2     ; 20 18 9 2 1 0 0 0; ...
      20 17 6 1 0 0 0 0      ; 20 5 0 0 0 0 0 0]';
-data.tN = [t, N]; initial = 20; % compose data set
+data.tN = [t, N]; init = 20; % compose data set
 units.tN = {'d', '#'}; label.tN = {'exposure time', 'surviving individuals'};  
 treat.tN = {1, c}; units.treat.tN = 'mug/l'; label.treat.tN = 'conc. of dieldrin';
 temp.tN = 25; units.temp.tN = 'C'; label.temp.tN = 'temperature';
@@ -37,7 +37,7 @@ weights = setweights(data, []);
 %% pack auxData and txtData for output
 auxData.treat = treat; 
 auxData.temp = temp; 
-auxData.initial = initial; 
+auxData.init = init; 
 txtData.units = units;
 txtData.label = label;
 txtData.bibkey = bibkey;
