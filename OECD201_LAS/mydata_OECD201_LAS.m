@@ -5,7 +5,7 @@ metaData.institution = 'VU University Amsterdam';
 metaData.email = 'bas.kooijman@vu.nl';
 metaData.date = [2022 02 28];
 metaData.toxTest = 'OECD201';
-metaData.species = 'Isochrysis aff. galbana';
+metaData.species = 'Isochrysis galbana';
 metaData.casno = '68411-30-3';
 metaData.compound = 'Sodium Linear Alkylbenzene Sulphonate';
 metaData.molWeight = 334.449; % g/mol
@@ -60,11 +60,12 @@ metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TD1',TD1, 'TD2',TD2);
 
 %% Discussion points
 D1 = 'Nutrient (nitrogen) limited algal growth in batch culture';
-D2 = 'Nutrient can inter-convert to background nutrient';
-D3 = 'Living, dead and decomposing biomass contribute to light absorption';
-D4 = 'Exposure in synthetic seawater';
-D5 = 'This analysis is discussed in KooyBeda1996, KooyHans1996';
-metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3, 'D4',D4, 'D5',D5);
+D2 = 'The cells are assumed to behave as V1-morphs with one reserve and no maintenance for nutrients, thus following Droop dynamics';
+D3 = 'Nutrients can inter-convert to background nutrient';
+D4 = 'Living, dead and decomposing biomass contribute to light absorption';
+D5 = 'Exposure in synthetic seawater';
+D6 = 'This analysis is discussed in KooyBeda1996, KooyHans1996';
+metaData.discussion = struct('D1',D1, 'D2',D2, 'D3',D3, 'D4',D4, 'D5',D5, 'D6',D6);
 
 %% References
 bibkey = 'OECD201'; type = 'techreport'; bib = [ ...
