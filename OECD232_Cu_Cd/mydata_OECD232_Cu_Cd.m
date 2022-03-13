@@ -1,11 +1,11 @@
-function [data, auxData, metaData, txtData, weights] = mydata_OECD203_Cu_Cd
+function [data, auxData, metaData, txtData, weights] = mydata_OECD232_Cu_Cd
 %% set metaData (optional fields)
 
 metaData.author = 'Bas Kooijman';
 metaData.institution = 'VU University Amsterdam';
 metaData.email = 'bas.kooijman@vu.nl';
 metaData.date = [2022 03 01];
-metaData.toxTest = 'OECD201';
+metaData.toxTest = 'OECD232';
 metaData.species = 'Folsomia candida';
 metaData.casno = '60-57-1';
 metaData.compound = 'Cu & Cd';
@@ -17,7 +17,7 @@ metaData.DEBmodel = 'NA';
 
 %% set data
 
-c_Cu = [0 0.4 0.8 1.6 3.2]'; % mg/g, Cu concentrations
+c_Cu = [0 0.4 0.8 1.6 3.2 6.4]'; % mg/g, Cu concentrations
 c_Cd = [0 0.2 0.4 0.8 1.6 3.2]'; % mg/g, Cd concentrations
 t = (0:21)'; % d, exposure times in days
 %
@@ -199,12 +199,13 @@ N_Cu_Cd_t(:,:,22) = [ ... % t = 21
 %
 data.N_Cu_Cd_t = N_Cu_Cd_t;
 init.N_Cu_Cd_t = 30; units.init.N_Cu_Cd_t = '-'; label.init.N_Cu_Cd_t = 'initial survivors';
-units.N_Cu_Cd_t = '#'; label.N_Cu_Cd_t = 'surviving individuals';  
-treat.N_Cu_Cd_t = {1, c_Cu, c_Cd, t}; units.treat.N_Cu_Cd_t = {'mg/g','mg/g','d'}; 
+units.N_Cu_Cd_t = {'mg/g', 'mg/g', '#', 'd'}; 
+label.N_Cu_Cd_t = {'Conc Cu', 'Conc Cd', 'surviving individuals', 'exposure time'};  
+treat.N_Cu_Cd_t = {2, {c_Cu, c_Cd, t}}; units.treat.N_Cu_Cd_t = {'mg/g','mg/g','d'}; 
 label.treat.N_Cu_Cd_t = {'conc. of Cu and Cd, exposure time'};
 temp.N_Cu_Cd_t = 18; units.temp.N_Cu_Cd_t = 'C'; label.temp.N_Cu_Cd_t = 'temperature';
 bibkey.N_Cu_Cd_t = 'BaasHout2007';
-title.N_Cu_Cd_t = 'Effects on hazard rate';
+title.N_Cu_Cd_t = '21 d exposure, effects on hazard rate';
 
 %% set weights for all real data
 weights = setweights(data, []);
@@ -217,27 +218,32 @@ txtData.units = units;
 txtData.label = label;
 txtData.bibkey = bibkey;
 txtData.title = title;
-txtData.comment = comment;
+%txtData.comment = comment;
 
 %% model
-TK1 = 'The temperature, food density and external concentration (i.e. in the water) are constant';
-TK2 = 'The uptake rate is proportional to the external concentration';
-TK3 = 'The elimination rate k_e is proportional to the internal concentration';
-TD1 = 'Effects are linked to the internal concentration c, scaled such that it has the dimension of an external concentration';
-TD2 = 'The hazard rate equals h+b*max(0,c-c_0) for no-effect concenteation c_0, killing rate b and blank hazrad rate h';
+TK1 = 'The temperature, food density and external concentrations (i.e. in the water) are constant';
+TK2 = 'The uptake rates are proportional to the external concentrations';
+TK3 = 'The elimination rates k_e are proportional to the internal concentrations';
+TD1 = 'Effects are linked to the internal concentrations c_x and c_y, scaled such that they have the dimension of external concentrations';
+TD2 = 'The hazard rate equals h+b_x*max(0,c_x-c_0x)+b_y*max(0,c_y-c_0y)+d_xy*max(0,c_x-c_0x)*max(0,c_y-c_0y) for no-effect concenteations c_0, killing rates b, interaction d_xy and blank hazard rate h';
 metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2);
 
 %% Discussion points
 D1 = 'Growth is neglected';
 metaData.discussion = struct('D1',D1);
 
+%% Facts
+F1 = 'To run this entry, first download apngasm64.exe and specify a path to it, such that your system can find it';
+metaData.bibkey.F1 = 'download';
+metaData.facts = struct('F1',F1);
+
 %% References
-bibkey = 'Krog2008'; type = 'techreport'; bib = [ ...
-'author = {P.H. Krogh}, ' ...
-'year = {2008}, ' ...
-'title  = {Toxicity testing with the collembolans \emph{Folsomia fimetaria} and \emph{Folsomia candida} and the results of a ringtest}, ' ...
-'institution = {Milj{\o}ministeriet}, ' ...
-'howpublished = {\url{https://www.oecd.org/chemicalsafety/testing/41389036.pdf}}'];
+bibkey = 'OECD232'; type = 'misc'; bib = [ ...
+'author = {OECD}, ' ...
+'year = {2015}, ' ...
+'title  = {OECD guidelines 232 Collembolan Reproduction Test in Soil}, ' ...
+'institution = {OECD Publishing, Paris}, ' ...
+'howpublished = {\url{https://www.oecd.org/chemicalsafety/testing/Draft-Updated-Test-Guildeline-232-Collembolan-Reproduction-Test-in-soil.pdf}}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 %
 bibkey = 'KooyBeda1996'; type = 'Book'; bib = [ ...
@@ -255,8 +261,15 @@ bibkey = 'BaasHout2007'; type = 'Article'; bib = [ ...
 'title  = {MODELING THE EFFECTS OF BINARY MIXTURES ON SURVIVAL IN TIME}, ' ...
 'journal = {Environmental Toxicology and Chemistry}, ' ...
 'volume = {26(6)}, ' ...
-'pages = {1320–1327}' ...
+'pages = {1320–1327}, ' ...
 'doi = {10.1897/06-437r.1}}'];
 metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
-estim_options('results_output', 3);
+%
+bibkey = 'download'; type = 'misc'; bib = [ ...
+'author = {sourceforge}, ' ...
+'year = {2022}, ' ...
+'title  = {Animated png assembler}, ' ...
+'institution = {sourceforge}, ' ...
+'howpublished = {\url{https://sourceforge.net/projects/apngasm/files/2.91/apngasm-2.91-bin-win64.zip/download}}'];
+metaData.biblist.(bibkey) = ['''@', type, '{', bibkey, ', ' bib, '}'';'];
 

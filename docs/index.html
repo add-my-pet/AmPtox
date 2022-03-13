@@ -115,13 +115,16 @@
 	after completing the estimation.
 	The examples presently include
         <table id="t01">
-	  <tr class="head"><th>test_compound</th> <th>species</th>             <th>end point</th>       <th>target</th></tr>
+	  <tr class="head"><th>test_compound</th> <th>species</th>       <th>end point</th>       <th>target</th></tr>
 	  <tr><td>OECD201_LAS</td>          <td>Isochrysis galbana</td>  <td>optical density</td> <td>hazard rate, cost for structure</td></tr>
 	  <tr><td>OECD202_dichromate</td>   <td>Daphnia magna</td>       <td>survival</td>        <td>hazard rate</td></tr>
 	  <tr><td>OECD203_dieldrin</td>     <td>Poecilia reticulata</td> <td>survival</td>        <td>hazard rate</td></tr>
 	  <tr><td>OECD210_PAH</td>          <td>Danio rerio</td>         <td>body length</td>     <td>spec assimilation</td></tr>
 	  <tr><td>OECD221_Cd</td>           <td>Daphnia magna</td>       <td>cum # offspring</td> <td>embryo hazard</td></tr>
-	  <tr><td>OECD222_Cu</td>           <td>Lumbricus rubelles</td>  <td>body weight</td>     <td>spec assimilation</td></tr>
+	  <tr><td>OECD222_Cu</td>           <td>Lumbricus rubelles</td>  <td>body weight</td>     <td>hazard rate</td></tr>
+	  <tr><td>OECD232_Cd_Cu</td>        <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
+	  <tr><td>OECD232_Cu_Pb</td>        <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
+	  <tr><td>OECD232_Cd_Zn</td>        <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
 	</table>
 	The tests on survival show a case where the change in size during exposure can be ignored and a case where it cannot.
 	Notice that all stress parameters are specified at the current temperature, since toxicity tests are typically done at a single temperature only
@@ -133,6 +136,8 @@
 	This opens a searchable html-page that also shows the temperatures at which the values apply and info to convert to other temperatures.
 	The production of the report runs <a href="https://miktex.org/packages/bibtex">BibTex</a> (under Matlab), which can be downloaded freely,
 	to produce an html with references; if not available, the bib-file is shown.
+	The tri-variate data in the toxicity tests fo mixtures require the code
+	<a href="https://sourceforge.net/projects/apngasm/files/2.91/apngasm-2.91-bin-win64.zip/download">apngasm64.exe</a> to generate the animated png-file.
 										
       </div> <!-- end of content -->
  

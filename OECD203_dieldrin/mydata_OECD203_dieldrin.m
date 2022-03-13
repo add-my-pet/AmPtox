@@ -49,7 +49,7 @@ TK1 = 'The temperature, food density and external concentration (i.e. in the wat
 TK2 = 'The uptake rate is proportional to the external concentration';
 TK3 = 'The elimination rate k_e is proportional to the internal concentration';
 TD1 = 'Effects are linked to the internal concentration c, scaled such that it has the dimension of an external concentration';
-TD2 = 'The hazard rate equals h+b*max(0,c-c_0) for no-effect concenteation c_0, killing rate b and blank hazrad rate h';
+TD2 = 'The hazard rate equals h+b*max(0,c-c_0) for no-effect concenteation c_0, killing rate b and blank hazard rate h';
 metaData.model = struct('TK1',TK1, 'TK2',TK2, 'TK3',TK3, 'TD1',TD1, 'TD2',TD2);
 
 %% Discussion points
