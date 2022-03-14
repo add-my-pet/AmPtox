@@ -127,18 +127,21 @@
 	  <tr><td>OECD232_Cu_Pb</td>        <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
 	  <tr><td>OECD232_Cd_Zn</td>        <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
 	</table>
-	The tests on survival show a case where the change in size during exposure can be ignored and a case where it cannot.
+	The tests on survival show a case where the change in size during exposure can be ignored (OECD203_dieldrin) and a case where it cannot (OECD202_dichromate).
 	Notice that all stress parameters are specified at the current temperature, since toxicity tests are typically done at a single temperature only
-	with no information to convert to other temperatures.
+	with no information about how to convert to other temperatures.
 
 	<p>
 	The DEB parameters for a particular existing entry can be found from running <code>prt_report_my_pet('My_Pet')</code>,
 	where <code>My_Pet</code> is replaced by the name of the entry.
 	This opens a searchable html-page that also shows the temperatures at which the values apply and info to convert to other temperatures.
+
+	<p>
 	The production of the report runs <a href="https://miktex.org/packages/bibtex">BibTex</a> (under Matlab), which can be downloaded freely,
 	to produce an html with references; if not available, the bib-file is shown.
-	The tri-variate data in the toxicity tests fo mixtures require the code
+	The tri-variate data in the toxicity tests fo mixtures (OECD232-tests) require the code
 	<a href="https://sourceforge.net/projects/apngasm/files/2.91/apngasm-2.91-bin-win64.zip/download">apngasm64.exe</a> to generate the animated png-file.
+	Please make sure that your system can find this code by setting a path to it in the environmental variables.
 										
       </div> <!-- end of content -->
  
