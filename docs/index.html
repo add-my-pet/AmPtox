@@ -102,7 +102,7 @@
 				
         <h2>From AmP entries to ecotoxicity</h2>
 
-	 <a href= "https://github.com/add-my-pet/AmPtox" target="_blank"> The AmPtox GitHub repository</a> has a number of examples of analyses of effects of toxicants on various endpoints.
+	<a href= "https://github.com/add-my-pet/AmPtox" target="_blank"> The AmPtox GitHub repository</a> has a number of examples of analyses of effects of toxicants on various endpoints.
 	The system is similar to that used for AmP entries, using 4 source-Matlab-files:
 	<ul>
 	  <li><code>mydata_FileNm</code> to specify data and relevant info
@@ -128,10 +128,13 @@
 	  <tr><td>OECD232_Cd_Zn</td>        <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
 	  <tr><td>OECD232_Zn_Cu</td>        <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
 	  <tr><td>OECD232_Zn_Pb</td>        <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
+	  <tr><td>OECD232_Cd_Cu_Pb_Zn</td>  <td>Folsomia candida</td>    <td>survival</td>        <td>hazard rate</td></tr>
 	</table>
-	The tests on survival show a case where the change in size during exposure can be ignored (OECD203_dieldrin) and a case where it cannot (OECD202_dichromate).
 	Notice that all stress parameters are specified at the current temperature, since toxicity tests are typically done at a single temperature only
 	with no information about how to convert to other temperatures.
+	The tests on survival show a case where the change in size during exposure can be ignored (OECD203_dieldrin) and a case where it cannot (OECD202_dichromate).
+	The test OECD232_Cd_Cu_Pb_Zn with 4 metals, combines the 6 binary mixtures with a reduced number of parameters, exploiting the notion that each metal was tested 3 times.
+	The resulting parameter estimates were used as initial values for the 6 binary-mixture tests.
 
 	<p>
 	The DEB parameters for a particular existing entry can be found from running <code>prt_report_my_pet('My_Pet')</code>,
