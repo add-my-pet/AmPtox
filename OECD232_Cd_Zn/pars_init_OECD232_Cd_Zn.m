@@ -5,15 +5,15 @@ metaPar.model = 'nat';
 
 %% parameters 
 % stress
-par.c_0x = 1.117; free.c_0x = 1; units.c_0x = 'mg/g'; label.c_0x = ' No-Effect-Concentration (external) for compound x';
-par.c_0y = 1.8894; free.c_0y = 1; units.c_0y = 'mg/g'; label.c_0y = ' No-Effect-Concentration (external) for compound y';
-par.b_x = 0.041681; free.b_x = 1; units.b_x = 'g/d.mg'; label.b_x = 'killing rate for compound x';
-par.b_y = 0.76157; free.b_y = 1; units.b_y = 'g/d.mg'; label.b_y = 'killing rate for compound y';
-par.k_ex = 469.6325; free.k_ex = 1; units.k_ex = '1/d'; label.k_ex = 'elimination rate for compound x';
-par.k_ey = 7702.5527; free.k_ey = 1; units.k_ey = '1/d'; label.k_ey = 'elimination rate for compound y';
-par.d_xy = 2.9969e-16; free.d_xy = 1; units.d_xy = '1/d.(mg/g)^2'; label.d_xy = 'interaction rate for compounds x and y';
+par.c_0Cd = 0.89367; free.c_0Cd = 1; units.c_0Cd = 'mg/g'; label.c_0Cd = ' No-Effect-Concentration (external) for Cd';
+par.c_0Zn = 4.2808; free.c_0Zn = 1; units.c_0Zn = 'mg/g'; label.c_0Zn = ' No-Effect-Concentration (external) for Zn';
+par.b_Cd = 0.039865; free.b_Cd = 1; units.b_Cd = 'g/d.mg'; label.b_Cd = 'killing rate for Cd';
+par.b_Zn = 0.87112; free.b_Zn = 1; units.b_Zn = 'g/d.mg'; label.b_Zn = 'killing rate for Zn';
+par.k_eCd = 67.4498; free.k_eCd = 1; units.k_eCd = '1/d'; label.k_eCd = 'elimination rate for Cd';
+par.k_eZn = 903.7917; free.k_eZn = 1; units.k_eZn = '1/d'; label.k_eZn = 'elimination rate for Zn';
+par.d_xy = 2.0392e-10; free.d_xy = 1; units.d_xy = '1/d.(mg/g)^2'; label.d_xy = 'interaction rate for x-y mix';
 % other
-par.h = 0.0046009; free.h = 1; units.h = '1/d'; label.h = 'hazard rate in the blank';
+par.h = 0.012434; free.h = 1; units.h = '1/d'; label.h = 'hazard rate in the blank';
 
 %% Pack output: 
 txtPar.units = units; txtPar.label = label; par.free = free; 

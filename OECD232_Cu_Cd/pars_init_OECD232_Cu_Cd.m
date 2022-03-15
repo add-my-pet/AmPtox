@@ -5,15 +5,15 @@ metaPar.model = 'nat';
 
 %% parameters 
 % stress
-par.c_0x = 2.768; free.c_0x = 1; units.c_0x = 'mg/g'; label.c_0x = ' No-Effect-Concentration (external) for compound x';
-par.c_0y = 0.1013; free.c_0y = 1; units.c_0y = 'mg/g'; label.c_0y = ' No-Effect-Concentration (external) for compound y';
-par.b_x = 0.066603; free.b_x = 1; units.b_x = 'g/d.mg'; label.b_x = 'killing rate for compound x';
-par.b_y = 5.4812e-11; free.b_y = 1; units.b_y = 'g/d.mg'; label.b_y = 'killing rate for compound y';
-par.k_ex = 103.419; free.k_ex = 1; units.k_ex = '1/d'; label.k_ex = 'elimination rate for compound x';
-par.k_ey = 16.494; free.k_ey = 1; units.k_ey = '1/d'; label.k_ey = 'elimination rate for compound y';
-par.d_xy = 8.5872e-32; free.d_xy = 1; units.d_xy = '1/d.(mg/g)^2'; label.d_xy = 'interaction rate for compounds x and y';
+par.c_0Cu = 3.1107; free.c_0Cu = 1; units.c_0Cu = 'mg/g'; label.c_0Cu = ' No-Effect-Concentration (external) for Cu';
+par.c_0Cd = 0.078497; free.c_0Cd = 1; units.c_0Cd = 'mg/g'; label.c_0Cd = ' No-Effect-Concentration (external) for Cd';
+par.b_Cu = 0.16161; free.b_Cu = 1; units.b_Cu = 'g/d.mg'; label.b_Cu = 'killing rate for Cu';
+par.b_Cd = 0.022398; free.b_Cd = 1; units.b_Cd = 'g/d.mg'; label.b_Cd = 'killing rate for Cd';
+par.k_eCu = 215396739.5609; free.k_eCu = 1; units.k_eCu = '1/d'; label.k_eCu = 'elimination rate for Cu';
+par.k_eCd = 1908906.8805; free.k_eCd = 1; units.k_eCd = '1/d'; label.k_eCd = 'elimination rate for Cd';
+par.d_xy = 0.15154; free.d_xy = 1; units.d_xy = '1/d.(mg/g)^2'; label.d_xy = 'interaction rate for Cu-Cd mix';
 % other
-par.h = 0.0087; free.h = 0; units.h = '1/d'; label.h = 'hazard rate in the blank';
+par.h = 0.0080586; free.h = 1; units.h = '1/d'; label.h = 'hazard rate in the blank';
 
 %% Pack output: 
 txtPar.units = units; txtPar.label = label; par.free = free; 
