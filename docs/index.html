@@ -133,11 +133,6 @@
 	Notice that all stress parameters are specified at the current temperature, since toxicity tests are typically done at a single temperature only
 	with no information about how to convert to other temperatures.
 	The tests on survival show a case where the change in size during exposure can be ignored (OECD203_dieldrin) and a case where it cannot (OECD202_dichromate).
-	The test OECD232_Cd_Cu_Pb_Zn with 4 metals, combines the 6 binary mixtures with a reduced number of parameters, exploiting the notion that each metal was tested 3 times.
-	The <code>pars_init_group_d0</code> file in this entry shows the results, given no interaction-toxicity of the binary mixtures,
-	while the <code>pars_init_group file</code> includes these interactions.
-	The conclusion must be that the interactions are weak only.
-	The resulting parameter estimates were used as initial values for the 6 binary-mixture tests, allowing variations in toxicity of each metal between tests.
 
 	<p>
 	The DEB parameters for a particular existing entry can be found from running <code>prt_report_my_pet('My_Pet')</code>,
@@ -149,9 +144,27 @@
 	use <code>mat2pars_init</code> (without input) to copy the results of the estimation into the <code>pars_init</code> file, which you can see in the Matlab editor.
 	The production of the report runs <a href="https://miktex.org/packages/bibtex">BibTex</a> (under Matlab), which can be downloaded freely,
 	to produce an html with references; if not available, the bib-file is shown.
-	The tri-variate data in the toxicity tests of mixtures (OECD232-tests) requires the code
+	Tri-variate data, like in the toxicity tests of mixtures (OECD232-tests), requires the code "animated png assembler"
 	<a href="https://sourceforge.net/projects/apngasm/files/2.91/apngasm-2.91-bin-win64.zip/download">apngasm64.exe</a> to generate the resulting animated png-file.
 	Please make sure that your system can find this code by setting a path to it in the environmental variables.
+
+	<h2>Multiple entries</h2>
+	The AmP setup for parameter estimation can handle <a href="https://debportal.debtheory.org/docs/AmPestimation.html#Multi-species">multiple entries</a> to accomodate the fact
+	that some parameters differ between species, but others are the same.
+	This setup also applies to the AmPtox module.
+	The test OECD232_Cd_Cu_Pb_Zn with 4 metals, combines the 6 binary mixtures with a reduced number of parameters, exploiting the notion that each metal was tested 3 times.
+	The <code>pars_init_group_d0</code> file in this entry shows the results, given no interaction-toxicity of the binary mixtures,
+	while the <code>pars_init_group file</code> includes these interactions.
+	The conclusion must be that the interactions are weak only.
+	The resulting parameter estimates were used as initial values for the 6 binary-mixture tests, allowing variations in toxicity of each metal between tests.
+
+	<p>
+	A useful application of the multiple-entry case is to combine an existing AmP entry with the data of the toxicity test.
+	The underlying idea is that test-conditions typically differ from the conditions that apply to the data in the AmP entry (temperature, food, housing).
+	This might result in deviating values of one or more parameters.
+	Only a few species can be kept successfully under laboratory conditions.
+	Knowledge of where and how the test-species differs from the data in the AmP entry is important for the interpretation of the effects of toxicants.
+
 										
       </div> <!-- end of content -->
  
