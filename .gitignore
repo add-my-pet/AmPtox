@@ -6,11 +6,11 @@
 *.html
 *.bib
 !/docs/*.html
+!/docs/sys/*.html
 !/docs/img/*.png
 !/OECD221_Cd/*.html
 !/OECD221_Cd/*.png
 !/OECD221_Cd/*.bib
-
 # OS generated files #
 ######################
 .DS_Store
