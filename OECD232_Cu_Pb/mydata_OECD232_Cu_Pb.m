@@ -16,7 +16,7 @@ metaData.DEBmodel = 'NA';
 
 %% set data
 
-c_Cu = [0 0.4 0.8 1.6 3.2 6.4]'; % mg/g, Cu concentrations
+c_Cu = [0 0.4 0.8 1.6 3.2 6.4]';  % mg/g, Cu concentrations
 c_Pb = [0 0.8 1.6 3.2 6.4 12.8]'; % mg/g, Pb concentrations
 t = (0:21)'; % d, exposure times in days
 %
